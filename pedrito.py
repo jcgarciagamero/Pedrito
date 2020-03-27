@@ -3,14 +3,18 @@
 #Created by Jose C. García Gamero
 #Twitter: @jcgarciagamero
 
+#  ____   U _____ u____    ____                 _____   U  ___ u 
+#U|  _"\ u\| ___"|/  _"\U |  _"\ u     ___     |_ " _|   \/"_ \/ 
+#\| |_) |/ |  _|"/| | | |\| |_) |/    |_"_|      | |     | | | | 
+# |  __/   | |___U| |_| |\|  _ <       | |      /| |\.-,_| |_| | 
+# |_|      |_____||____/ u|_| \_\    U/| |\u   u |_|U \_)-\___/  
+# ||>>_    <<   >> |||_   //   \\_.-,_|___|_,-._// \\_     \\    
+#(__)__)  (__) (__|__)_) (__)  (__)\_)-' '-(_/(__) (__)   (__)   
+
+
 import os
 import sys
 import urllib, re
-
-
-
-
-
 
 enlaces = (['http://example1.com','http://example2.com']) #Modify with your list of domains.
 
