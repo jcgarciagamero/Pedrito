@@ -3,34 +3,33 @@
 #Created by Jose C. García Gamero
 #Twitter: @jcgarciagamero
 
-#  ____   U _____ u____    ____                 _____   U  ___ u 
-#U|  _"\ u\| ___"|/  _"\U |  _"\ u     ___     |_ " _|   \/"_ \/ 
-#\| |_) |/ |  _|"/| | | |\| |_) |/    |_"_|      | |     | | | | 
-# |  __/   | |___U| |_| |\|  _ <       | |      /| |\.-,_| |_| | 
-# |_|      |_____||____/ u|_| \_\    U/| |\u   u |_|U \_)-\___/  
-# ||>>_    <<   >> |||_   //   \\_.-,_|___|_,-._// \\_     \\    
-#(__)__)  (__) (__|__)_) (__)  (__)\_)-' '-(_/(__) (__)   (__)   
-
-
 import os
 import sys
 import urllib, re
+
+print('  ____   U _____ u____    ____                 _____   U  ___ u ')
+print('U|  _"\ u\| ___"|/  _"\U |  _"\ u     ___     |_ " _|   \/"_ \/ ')
+print('\| |_) |/ |  _|"/| | | |\| |_) |/    |_"_|      | |     | | | | ')
+print(' |  __/   | |___U| |_| |\|  _ <       | |      /| |\.-,_| |_| | ')
+print(' |_|      |_____||____/ u|_| \_\    U/| |\u   u |_|U \_)-\___/  ')
+print(' ||>>_    <<   >> |||_   //   \\_.-,_|___|_,-._// \\_     \\    ')
+print('(__)__)  (__) (__|__)_) (__)  (__)\_)-' '-(_/(__) (__)   (__)   ')
+
+
+
 
 enlaces = (['http://example1.com','http://example2.com']) #Modify with your list of domains.
 
 for enlace in enlaces:
 
-	
+	var = 0
 	scan = enlace
 	os.system("@echo off")
 	os.system("curl -L -m 10 %s > tmp.html" %scan)
 	code = "tmp.html"
 	lines = urllib.urlopen(code).read()
 
-	enlas = re.findall('http?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', lines)
-	f=open("logs.txt","a")
-	f.write("Domain: "+scan+ "\nEnlaces:\n"+str(enlas)+"\nDetected keywords: ")
-	f.close()
+	
 	
 	words = (['keyword','keyword2']) #Modify with your list of keywords
 	print("Domain: "+enlace)
@@ -41,16 +40,37 @@ for enlace in enlaces:
 		search = lines.find(busqueda) 
 		if search != -1:
 			print(busqueda)
-			f=open("logs.txt","a")
-			f.write(busqueda+",")
-			f.close()
+			if var != 1:
+				enlas = re.findall('http?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', lines)
+				f=open("logs.txt","a")
+				f.write("Domain: "+scan+ "\nEnlaces:\n"+str(enlas)+"\nDetected keywords: \n")
+				f.close()
+				f=open("logs.txt","a")
+				f.write(busqueda+",")
+				f.close()
+				print("Links: ")
+				print(enlas)
+			  	f=open("logs.txt","a")
+				f.write("\n")
+				f.close()
+
+				var = 1
+			else:
+				f=open("logs.txt","a")
+				f.write(busqueda+",")
+				f.close()
+				f=open("logs.txt","a")
+				f.write("\n")
+				f.close()
+		
+
+	
+		
+    
+				
+		
 
 
-	print("Links: ")
-	print(enlas)
-  	f=open("logs.txt","a")
-	f.write("\n")
-	f.close()
 
     
 				
