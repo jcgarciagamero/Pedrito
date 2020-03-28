@@ -11,4 +11,6 @@ Pedrito is an script created to detect keywords located in the code of a domain.
 Introducing a list of domains and keywords, the script will searched for those keywords inside the domains 
 and extracts the posible link embeded in the domains. 
 
+Requeriments:
 
+Python 3
